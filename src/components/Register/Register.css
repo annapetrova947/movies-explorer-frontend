@@ -1,0 +1,101 @@
+.register {
+  max-width: 396px;
+  margin: 0 auto;
+}
+
+.register__logo {
+  margin: 70px 0 40px;
+}
+
+.register__gladtosee {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  margin: 0 auto 40px;
+}
+
+.form__fieldtitle {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  text-align: left;
+  margin: 0 auto 10px;
+}
+
+.form__input {
+  background-color: #f9f9f9;
+  width: 100%;
+  height: 46px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.form__input:last-of-type {
+  margin-bottom: 179px;
+}
+
+.form__submit-button {
+  border-radius: 3px;
+  width: 100%;
+  height: 45px;
+  background-color: black;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  text-align: center;
+  color: #f9f9f9;
+  margin-bottom: 16px;
+}
+
+.form__submit-button:hover {
+  opacity: 0.8;
+}
+
+.register__question {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  text-align: center;
+  color: #a0a0a0;
+}
+
+.register__signin {
+  color: black;
+  cursor: pointer;
+}
+
+.register__signin:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 787px) {
+  .register {
+    max-width: 260px;
+  }
+
+  .register__logo {
+    margin: 56px 131px 50px;
+  }
+
+  .register__welcome {
+    text-align: center;
+    margin: 0 auto 80px;
+  }
+
+  .form__input:last-of-type {
+    margin-bottom: 267px;
+  }
+
+  .form__submit-button {
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 14px;
+  }
+
+  .register__question {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+  }
+}

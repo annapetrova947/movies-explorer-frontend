@@ -1,0 +1,161 @@
+.aboutme {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.aboutme__student {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: -0.04em;
+  margin-top: 110px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid black;
+}
+
+.aboutme__info {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 60px 0 100px;
+}
+
+.aboutme__text-info {
+  max-width: 600px;
+}
+
+.aboutme__name {
+  margin: 0;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+}
+
+.aboutme__profession {
+  margin: 18px 0 26px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.aboutme__description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  margin: 0 0 100px;
+}
+
+.aboutme__github {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  text-decoration: none;
+  color: black;
+}
+
+.aboutme__github:hover {
+  opacity: 0.7;
+}
+
+.aboutme__photo {
+  height: 327px;
+  width: 270px;
+  margin-left: 270px;
+  border-radius: 10px;
+}
+
+@media (max-width: 1279px) {
+  .aboutme {
+    max-width: 668px;
+  }
+
+  .aboutme__student {
+    margin-top: 90px;
+  }
+
+  .aboutme__info {
+    display: flex;
+    margin: 66px 0 90px;
+  }
+
+  .aboutme__text-info {
+    max-width: 364px;
+  }
+
+  .aboutme__name {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .aboutme__profession {
+    margin: 16px 0 20px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .aboutme__description {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 0 87px;
+  }
+
+  .aboutme__photo {
+    height: 305px;
+    width: 255px;
+    margin-left: 49px;
+  }
+}
+
+@media (max-width: 767px) {
+  .aboutme {
+    max-width: 292px;
+  }
+
+  .aboutme__student {
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 70px;
+    padding-bottom: 28px;
+  }
+
+  .aboutme__info {
+    display: block;
+    margin: 60px 0 70px;
+  }
+
+  .aboutme__text-info {
+    max-width: 292px;
+  }
+
+  .aboutme__name {
+    font-size: 30px;
+    line-height: 36px;
+    margin-top: 40px;
+  }
+
+  .aboutme__profession {
+    margin: 20px 0 20px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .aboutme__description {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16px;
+    margin: 0 0 40px;
+  }
+
+  .aboutme__github {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+  }
+
+  .aboutme__photo {
+    height: 352px;
+    width: 292px;
+    margin-left: 0;
+    border-radius: 10px;
+  }
+}

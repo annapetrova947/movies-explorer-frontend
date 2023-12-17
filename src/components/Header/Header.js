@@ -10,14 +10,18 @@ import { Link, NavLink } from "react-router-dom";
 export default function Header() {
   const location = useLocation();
   let ifLocationPathIsMain = location.pathname === "/";
-  let classNameHeader = `header ${ifLocationPathIsMain && "header-pink"}`;
+  let classNameHeader = `header ${ifLocationPathIsMain && "header_color-pink"}`;
   let classNameProfile = `header__profile ${
-    ifLocationPathIsMain && "header__profile_pink"
+    ifLocationPathIsMain && "header__profile_color-pink"
   }`;
 
   return (
     <header className={classNameHeader}>
-      <img src={logo} alt="Логотип" className="header__logo" />
+        <NavLink
+          to="/"
+          className='header__logo'
+        />
+
       <div className="header__navigation">
         <NavLink
           to="/movies"

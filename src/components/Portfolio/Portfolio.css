@@ -34,15 +34,13 @@
   align-self: center;
   font-size: 30px;
   line-height: 50px;
+  font-weight: 400;
   letter-spacing: -0.04em;
   color: black;
   margin: 0;
 }
 
-.portfolio__link-logo {
-  width: 29px;
-  height: 60px;
-}
+
 
 @media (max-width: 1279px) {
   .portfolio {
@@ -55,9 +53,6 @@
 
   .portfolio__text {
     font-size: 28px;
-  }
-  .portfolio__link-logo {
-    width: 27px;
   }
 }
 
@@ -79,9 +74,5 @@
   .portfolio__text {
     font-size: 18px;
     line-height: 28px;
-  }
-  .portfolio__link-logo {
-    width: 18px;
-    height: 28px;
   }
 }

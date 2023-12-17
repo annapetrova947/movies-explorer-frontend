@@ -22,17 +22,21 @@
   margin: 0 auto 10px;
 }
 
-.form__input {
+.form__input_login {
   background-color: #f9f9f9;
   width: 100%;
   height: 46px;
   border: none;
   border-radius: 8px;
   margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+
 }
 
-.form__input:last-of-type {
-  margin-bottom: 179px;
+.form__input_login:last-of-type {
+  margin-bottom: 91px;
 }
 
 .form__submit-button {
@@ -41,7 +45,7 @@
   height: 45px;
   background-color: black;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 17px;
   text-align: center;
   color: #f9f9f9;
@@ -59,6 +63,7 @@
   line-height: 17px;
   text-align: center;
   color: #a0a0a0;
+  margin: 0;
 }
 
 .login__reg:hover {
@@ -67,6 +72,7 @@
 }
 .login__reg {
   color: black;
+  text-decoration: none;
 }
 
 @media (max-width: 787px) {
@@ -83,7 +89,7 @@
     margin: 0 auto 80px;
   }
 
-  .form__input:last-of-type {
+  .form__input_login:last-of-type {
     margin-bottom: 267px;
   }
 

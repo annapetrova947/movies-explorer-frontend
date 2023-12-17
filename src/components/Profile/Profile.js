@@ -7,7 +7,7 @@ export default function Profile() {
   return (
     <>
       <Header />
-      <div className="profile">
+      <main className="profile">
         <p className="profile__hello">Привет, Аня!</p>
         <div className="profile__data">
           <p className="profile__data-name">Имя</p>
@@ -26,9 +26,9 @@ export default function Profile() {
             onChange={handleChange}
           />
         </div>
-        <p className="profile__edit">Редактировать</p>
-        <p className="profile__exit">Выйти за аккаунта</p>
-      </div>
+        <button type='button' className="profile__edit">Редактировать</button>
+        <button type='button' className="profile__exit">Выйти за аккаунта</button>
+      </main>
     </>
   );
 }

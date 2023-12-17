@@ -15,8 +15,8 @@ export default function MoviesCardList(props) {
               .filter((film) => film.isSaved === true)
               .map((film, i) => <MoviesCard movie={film} key={i} />)}
       </div>
-      <div className="movies-list__more">
-        <button className="movies-list__button">Еще</button>
+      <div className="movies__more">
+        <button type="button" className="movies__button">Еще</button>
       </div>
     </div>
   );

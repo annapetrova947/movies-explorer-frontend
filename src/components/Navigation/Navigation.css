@@ -3,6 +3,23 @@
   height: 44px;
 }
 
+.navigation__logo{
+  width: 44px;
+  height: 44px;
+  background-image: url("./../../images/menu-icon.svg");
+  background-color: white;
+  border: none;
+  cursor: pointer;
+
+}
+.navigation__logo_color-pink{
+  background-color: #f3c1f8;
+}
+
+.navigation__logo:hover{
+  opacity: 0.7;
+}
+
 .navigation__overlay {
   position: fixed;
   width: 100%;

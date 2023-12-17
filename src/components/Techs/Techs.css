@@ -21,7 +21,7 @@
   line-height: 58px;
   letter-spacing: -0.04em;
   text-align: center;
-  margin: 50px auto 26px;
+  margin: 90px auto 26px;
 }
 
 .techs__description {
@@ -59,7 +59,7 @@
 
 @media (max-width: 1279px) {
   .techs__header {
-    max-width: 648px;
+    max-width: 668px;
     padding-top: 90px;
   }
 

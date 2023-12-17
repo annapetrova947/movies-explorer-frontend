@@ -3,8 +3,14 @@ import "./Navigation.css";
 import menu from "../../images/menu-icon.svg";
 import { Link, NavLink } from "react-router-dom";
 import profileLogo from "../../images/profile-icon-min.svg";
+import { useLocation } from "react-router-dom";
 
 export default function Navigation() {
+
+    const location = useLocation();
+    let classNameMenuButton = `navigation__logo ${
+        location.pathname === "/" && "navigation__logo_color-pink"
+      }`;
   const [isPopupOpen, setPopupOpen] = React.useState(false);
   function handleClose() {
     setPopupOpen(false);
@@ -16,16 +22,14 @@ export default function Navigation() {
 
   return (
     <div className="navigation">
-      <img
-        src={menu}
-        alt="Меню"
-        className="navigation__logo"
+      <button type="button"
+        className={classNameMenuButton}
         onClick={openPopup}
       />
       {isPopupOpen && (
         <div className="navigation__overlay">
           <div className="navigation__popup">
-            <button
+            <button type="button"
               className="navigation__close-button"
               onClick={handleClose}
             ></button>

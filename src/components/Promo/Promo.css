@@ -12,6 +12,9 @@
   line-height: 58px;
   padding-top: 184px;
   max-width: 730px;
+  letter-spacing: -0.04em;
+  text-align: center;
+
 }
 
 .promo__logo {

@@ -42,8 +42,10 @@ export default function Movies() {
   return (
     <>
       <Header />
-      <SearchForm />
-      <MoviesCardList movies={movies} />
+        <main>
+          <SearchForm />
+          <MoviesCardList movies={movies} />
+        </main>
       <Footer />
     </>
   );

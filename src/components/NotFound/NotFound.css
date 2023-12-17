@@ -11,17 +11,23 @@
 }
 
 .notfound__pagenotfound {
-  margin: 0 auto;
+  margin: 0 auto 184px;
   font-size: 16px;
   font-weight: 400;
   line-height: 19px;
 }
 
 .notfound__back {
-  margin-top: 184px;
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
+  color: black;
+  text-decoration: none;
+
+}
+
+.notfound__back:hover{
+  opacity: 0.7;
 }
 
 @media (max-width: 767px) {

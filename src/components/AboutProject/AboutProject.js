@@ -22,7 +22,7 @@ export default function AboutProject() {
         </p>
       </div>
       <div className="about-project__timeline">
-        <p className="about-project__weeks about-project__weeks-black">
+        <p className="about-project__weeks about-project__weeks_color-black">
           1 неделя
         </p>
         <p className="about-project__weeks">4 недели</p>

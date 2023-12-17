@@ -8,7 +8,7 @@
   border-top: 1px solid #e8e8e8;
 }
 
-.movies-list__button {
+.movies__button {
   background-color: #f9f9f9;
   width: 320px;
   height: 36px;
@@ -20,11 +20,11 @@
   line-height: 15px;
 }
 
-.movies-list__button:hover {
+.movies__button:hover {
   opacity: 0.8;
 }
 
-.movies-list__more {
+.movies__more {
   display: flex;
   margin: 50px auto 80px;
   justify-content: center;
@@ -47,7 +47,7 @@
     padding-top: 50px;
   }
 
-  .movies-list__button {
+  .movies__button {
     width: 240px;
   }
 }

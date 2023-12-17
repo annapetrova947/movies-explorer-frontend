@@ -7,7 +7,7 @@
   margin: 70px 0 40px;
 }
 
-.register__gladtosee {
+.register__welcome {
   font-size: 24px;
   font-weight: 500;
   line-height: 29px;
@@ -58,11 +58,13 @@
   line-height: 17px;
   text-align: center;
   color: #a0a0a0;
+  margin: 0;
 }
 
 .register__signin {
   color: black;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .register__signin:hover {
@@ -72,10 +74,13 @@
 @media (max-width: 787px) {
   .register {
     max-width: 260px;
+    display: flex;
+    flex-direction: column;
   }
 
   .register__logo {
-    margin: 56px 131px 50px;
+    margin: 56px auto 50px;
+    align-self: center;
   }
 
   .register__welcome {
@@ -84,7 +89,7 @@
   }
 
   .form__input:last-of-type {
-    margin-bottom: 267px;
+    margin-bottom: 179px;
   }
 
   .form__submit-button {

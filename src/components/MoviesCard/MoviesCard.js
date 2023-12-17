@@ -7,13 +7,13 @@ export default function MoviesCard(props) {
   const location = useLocation();
   let isSaved = props.movie.isSaved;
   let shouldDeleted = location.pathname === "/saved-movies";
-  let buttonClassName = `movies-card_button
+  let buttonClassName = `movies-card__button
   ${
     shouldDeleted
-      ? "movies-card_button_should-deleted"
+      ? "movies-card__button_should-deleted"
       : isSaved
-        ? "movies-card_button_saved"
-        : "movies-card_button_default"
+        ? "movies-card__button_saved"
+        : "movies-card__button_default"
   }`;
   return (
     <div className="movies-card">

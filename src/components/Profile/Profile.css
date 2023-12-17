@@ -3,7 +3,6 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-
 }
 
 .profile__hello {
@@ -77,8 +76,6 @@
 }
 
 @media (max-width: 1279px) {
-
-
   .profile__hello {
     margin: 236px auto 96px;
   }

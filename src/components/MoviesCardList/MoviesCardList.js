@@ -16,7 +16,9 @@ export default function MoviesCardList(props) {
               .map((film, i) => <MoviesCard movie={film} key={i} />)}
       </div>
       <div className="movies__more">
-        <button type="button" className="movies__button">Еще</button>
+        <button type="button" className="movies__button">
+          Еще
+        </button>
       </div>
     </div>
   );

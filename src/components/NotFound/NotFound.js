@@ -8,7 +8,7 @@ export default function NotFound() {
       <p className="notfound__code">404</p>
       <p className="notfound__pagenotfound">Страница не найдена</p>
       <NavLink to="/" className="notfound__back">
-           Назад
+        Назад
       </NavLink>
     </div>
   );

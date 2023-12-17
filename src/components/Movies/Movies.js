@@ -42,10 +42,10 @@ export default function Movies() {
   return (
     <>
       <Header />
-        <main>
-          <SearchForm />
-          <MoviesCardList movies={movies} />
-        </main>
+      <main>
+        <SearchForm />
+        <MoviesCardList movies={movies} />
+      </main>
       <Footer />
     </>
   );

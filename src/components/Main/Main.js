@@ -13,14 +13,14 @@ export default function Main() {
   return (
     <div className="main">
       <Header />
-        <main>
-          <Promo />
-          <NavTab />
-          <AboutProject />
-          <Techs />
-          <AboutMe />
-          <Portfolio />
-         </main>
+      <main>
+        <Promo />
+        <NavTab />
+        <AboutProject />
+        <Techs />
+        <AboutMe />
+        <Portfolio />
+      </main>
       <Footer />
     </div>
   );

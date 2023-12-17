@@ -17,10 +17,7 @@ export default function Header() {
 
   return (
     <header className={classNameHeader}>
-        <NavLink
-          to="/"
-          className='header__logo'
-        />
+      <NavLink to="/" className="header__logo" />
 
       <div className="header__navigation">
         <NavLink

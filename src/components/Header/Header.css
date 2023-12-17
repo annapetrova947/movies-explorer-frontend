@@ -16,7 +16,7 @@
   background-image: url("./../../images/logo-min.svg");
 }
 
-.header__logo:hover{
+.header__logo:hover {
   opacity: 0.8;
 }
 .header__profile {

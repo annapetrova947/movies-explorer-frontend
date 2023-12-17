@@ -38,20 +38,15 @@ export default function Register() {
           required
         />
 
-        <button
-          type="submit"
-          className="form__submit-button"
-        >
+        <button type="submit" className="form__submit-button">
           Зарегистрироваться
         </button>
       </form>
       <p className="register__question">
-        Уже зарегистрированы?  <NavLink
-                                                    to="/sign-in"
-                                                    className="register__signin"
-                                                  >
-                                                    Войти
-                                                  </NavLink>
+        Уже зарегистрированы?{" "}
+        <NavLink to="/sign-in" className="register__signin">
+          Войти
+        </NavLink>
       </p>
     </div>
   );

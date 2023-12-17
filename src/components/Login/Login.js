@@ -33,12 +33,10 @@ export default function Login() {
         </button>
       </form>
       <p className="login__question">
-        Еще не зарегистрированы? <NavLink
-                      to="/sign-up"
-                      className="login__reg"
-                    >
-                      Регистрация
-                    </NavLink>
+        Еще не зарегистрированы?{" "}
+        <NavLink to="/sign-up" className="login__reg">
+          Регистрация
+        </NavLink>
       </p>
     </div>
   );

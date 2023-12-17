@@ -26,8 +26,12 @@ export default function Profile() {
             onChange={handleChange}
           />
         </div>
-        <button type='button' className="profile__edit">Редактировать</button>
-        <button type='button' className="profile__exit">Выйти за аккаунта</button>
+        <button type="button" className="profile__edit">
+          Редактировать
+        </button>
+        <button type="button" className="profile__exit">
+          Выйти за аккаунта
+        </button>
       </main>
     </>
   );

@@ -41,10 +41,10 @@ export default function SavedMovies() {
   return (
     <>
       <Header />
-        <main>
-              <SearchForm />
-              <MoviesCardList movies={movies} />
-        </main>
+      <main>
+        <SearchForm />
+        <MoviesCardList movies={movies} />
+      </main>
       <Footer />
     </>
   );

@@ -7,13 +7,9 @@ export default function SearchForm() {
   return (
     <div className="search">
       <form className="search__form">
-        <img
-          alt="Логотип поиска"
-          src={findIcon}
-          className="search-form__logo"
-        />
-        <input placeholder="Фильм" className="search-form__input" />
-        <button type="button" className="search-form__button">
+        <img alt="Логотип поиска" src={findIcon} className="search__logo" />
+        <input placeholder="Фильм" className="search__input" />
+        <button type="button" className="search__button">
           Найти
         </button>
       </form>

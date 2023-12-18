@@ -26,16 +26,6 @@ export default function SavedMovies() {
       duration: "1ч 17м",
       isSaved: false,
     },
-    {
-      name: "33 слова о дизайне",
-      duration: "1ч 17м",
-      isSaved: true,
-    },
-    {
-      name: "33 слова о дизайне",
-      duration: "1ч 17м",
-      isSaved: false,
-    },
   ];
 
   return (

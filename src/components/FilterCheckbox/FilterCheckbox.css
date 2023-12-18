@@ -52,6 +52,7 @@
 @media (max-width: 1279px) {
   .filter {
     gap: 15px;
+    margin: 0 19px;
   }
 }
 

@@ -73,4 +73,10 @@
     font-size: 18px;
     line-height: 28px;
   }
+
+  .portfolio__link-logo {
+    width: 10px;
+    height: 18px;
+    padding: 5px 5px;
+  }
 }

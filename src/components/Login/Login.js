@@ -1,12 +1,11 @@
 import React from "react";
 import "./Login.css";
-import logo from "../../images/logo-min.svg";
 import { Link, NavLink } from "react-router-dom";
 
 export default function Login() {
   return (
     <div className="login">
-      <img src={logo} alt="Логотип" className="login__logo" />
+      <Link to="/" className="login__logo"></Link>
       <p className="login__gladtosee">Рады видеть!</p>
       <form className="form">
         <p className="form__fieldtitle">E-mail</p>
@@ -14,7 +13,7 @@ export default function Login() {
           id="email"
           type="email"
           name="email"
-          className="form__input_login"
+          className="form__input-login"
           required
           minLength={2}
           maxLength={30}
@@ -24,7 +23,7 @@ export default function Login() {
           id="password"
           type="password"
           name="password"
-          className="form__input_login"
+          className="form__input-login"
           required
         />
 

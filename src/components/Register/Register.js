@@ -1,12 +1,11 @@
 import React from "react";
 import "./Register.css";
-import logo from "../../images/logo-min.svg";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Register() {
   return (
     <div className="register">
-      <img src={logo} alt="Логотип" className="register__logo" />
+      <Link to="/" className="register__logo"></Link>
       <p className="register__welcome">Добро пожаловать!</p>
       <form className="form">
         <p className="form__fieldtitle">Имя</p>

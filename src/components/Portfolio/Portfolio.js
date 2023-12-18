@@ -11,7 +11,7 @@ export default function Portfolio() {
         href="https://github.com/annapetrova947/how-to-learn"
         target="_blank"
       >
-        <p className="portfolio__text">Одностраничный сайт</p>
+        <p className="portfolio__text">Статичный сайт</p>
         <img
           src={linkLogo}
           className="portfolio__link-logo"

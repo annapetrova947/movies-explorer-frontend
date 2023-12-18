@@ -17,38 +17,44 @@ export default function Header() {
 
   return (
     <header className={classNameHeader}>
-      <NavLink to="/" className="header__logo" />
+      <div className="header__container">
+        <NavLink to="/" className="header__logo" />
 
-      <div className="header__navigation">
-        <NavLink
-          to="/movies"
-          className={({ isActive }) =>
-            isActive ? "header__movies header__movies_active" : "header__movies"
-          }
-        >
-          Фильмы
-        </NavLink>
-        <NavLink
-          to="/saved-movies"
-          className={({ isActive }) =>
-            isActive ? "header__movies header__movies_active" : "header__movies"
-          }
-        >
-          Сохранённые фильмы
-        </NavLink>
-        <Link to="/profile" className="header__account-link">
-          <p className="header__account">Аккаунт</p>
+        <div className="header__navigation">
+          <NavLink
+            to="/movies"
+            className={({ isActive }) =>
+              isActive
+                ? "header__movies header__movies_active"
+                : "header__movies"
+            }
+          >
+            Фильмы
+          </NavLink>
+          <NavLink
+            to="/saved-movies"
+            className={({ isActive }) =>
+              isActive
+                ? "header__movies header__movies_active"
+                : "header__movies"
+            }
+          >
+            Сохранённые фильмы
+          </NavLink>
+          <Link to="/profile" className="header__account-link">
+            <p className="header__account">Аккаунт</p>
 
-          <div className={classNameProfile}>
-            <img
-              src={ifLocationPathIsMain ? profileLogoPink : profileLogo}
-              alt="Профиль"
-              className="header__profile-logo"
-            />
+            <div className={classNameProfile}>
+              <img
+                src={ifLocationPathIsMain ? profileLogoPink : profileLogo}
+                alt="Профиль"
+                className="header__profile-logo"
+              />
+            </div>
+          </Link>
+          <div className="header__menu">
+            <Navigation />
           </div>
-        </Link>
-        <div className="header__menu">
-          <Navigation />
         </div>
       </div>
     </header>

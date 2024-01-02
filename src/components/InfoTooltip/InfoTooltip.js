@@ -9,7 +9,7 @@ export default function InfoTooltip(props) {
 
   if (props.status === "ok") {
     img = ok_image;
-    text = "Вы успешно зарегистрировались!";
+    text = "Вы успешно обновили профиль!";
   } else {
     img = error_image;
     text = props.status;

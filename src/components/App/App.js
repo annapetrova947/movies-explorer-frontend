@@ -60,6 +60,7 @@ function App() {
     api
       .signup(email, name, password)
       .then((res) => {
+        setLoggedIn(true);
         navigate("/movies", { replace: true });
       })
       .catch((err) => {console.log(err)});
@@ -75,7 +76,7 @@ function App() {
         navigate("/movies", { replace: true });
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.message);
       });
   }
 

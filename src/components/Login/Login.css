@@ -26,7 +26,12 @@
   font-weight: 400;
   line-height: 12px;
   text-align: left;
-  margin: 0 auto 10px;
+  margin: 20px auto 10px;
+
+}
+
+.form__fieldtitle:first-of-type{
+  margin-top: 0;
 }
 
 .form__input-login {
@@ -35,14 +40,14 @@
   height: 46px;
   border: none;
   border-radius: 8px;
-  margin-bottom: 20px;
+
   font-size: 13px;
   font-weight: 400;
   line-height: 16px;
 }
 
-.form__input-login:last-of-type {
-  margin-bottom: 179px;
+.form__input-login:first-of-type {
+
 }
 
 .form__submit-button {
@@ -57,6 +62,7 @@
   color: #f9f9f9;
   margin-bottom: 16px;
   cursor: pointer;
+  margin-top: 179px;
 }
 
 .form__submit-button:hover {
@@ -81,6 +87,20 @@
   text-decoration: none;
 }
 
+.form__submit-button_disabled{
+  background-color: #aaaaaa;
+  cursor: default;
+}
+
+.form__submit-button_disabled:hover{
+  opacity: 1;
+}
+
+.form__input-error{
+  font-size: 10px;
+  padding-bottom: 5px;
+}
+
 @media (max-width: 1279px) {
   .login__logo {
     margin-top: 232px;
@@ -89,6 +109,8 @@
     margin-bottom: 232px;
   }
 }
+
+
 
 @media (max-width: 787px) {
   .login {
@@ -104,14 +126,11 @@
     margin: 0 auto 80px;
   }
 
-  .form__input-login:last-of-type {
-    margin-bottom: 267px;
-  }
-
   .form__submit-button {
     font-size: 12px;
     line-height: 15px;
     margin-bottom: 14px;
+    margin-top: 267px;
   }
 
   .login__question {

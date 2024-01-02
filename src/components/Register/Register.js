@@ -1,33 +1,30 @@
 import React from "react";
 import "./Register.css";
 import { Link, NavLink } from "react-router-dom";
+import useForm from '../../hooks/useForm';
 
 export default function Register(props) {
-  const refInputEmail = React.useRef();
-  const refInputPassword = React.useRef();
-  const refInputName = React.useRef();
+    const { enteredValues, errors, handleChange, isFormValid } = useForm();
+
+      const EMAIL_REGEX =
+        "^[-a-z0-9!#$%&'*+/=?^_`{|}~]+(.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*@([a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?.)*(aero|arpa|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|[a-z][a-z])$";
+
+      let buttonClassName = `form__submit-button ${!isFormValid && "form__submit-button_disabled"}`
 
   function register(event) {
     event.preventDefault();
-    console.log(
-      refInputName.current.value,
-      refInputEmail.current.value,
-      refInputPassword.current.value,
-    );
     props.onRegister(
-      refInputName.current.value,
-      refInputEmail.current.value,
-      refInputPassword.current.value,
+      enteredValues.name, enteredValues.email, enteredValues.password
     );
   }
   return (
     <div className="register">
       <Link to="/" className="register__logo"></Link>
       <p className="register__welcome">Добро пожаловать!</p>
-      <form className="form" onSubmit={register}>
+      <form className="form" onSubmit={register} id="form">
         <p className="form__fieldtitle">Имя</p>
         <input
-          ref={refInputName}
+          value={enteredValues.name || ''}
           id="name"
           type="text"
           name="name"
@@ -35,29 +32,34 @@ export default function Register(props) {
           required
           minLength={2}
           maxLength={30}
+          onChange={handleChange}
         />
+        <span className="form__input-error">{errors.name}</span>
         <p className="form__fieldtitle">E-mail</p>
         <input
-          ref={refInputEmail}
+          value={enteredValues.email || ''}
           id="email"
           type="email"
           name="email"
           className="form__input"
           required
-          minLength={2}
-          maxLength={30}
+          pattern={EMAIL_REGEX}
+          onChange={handleChange}
         />
+        <span className="form__input-error">{errors.email}</span>
         <p className="form__fieldtitle">Пароль</p>
         <input
-          ref={refInputPassword}
+          value={enteredValues.password || ''}
           id="password"
           type="password"
           name="password"
           className="form__input"
           required
+          onChange={handleChange}
         />
+        <span className="form__input-error">{errors.password}</span>
 
-        <button type="submit" className="form__submit-button">
+        <button type="submit" className={buttonClassName}>
           Зарегистрироваться
         </button>
       </form>

@@ -35,11 +35,11 @@
   height: 46px;
   border: none;
   border-radius: 8px;
-  margin-bottom: 20px;
+
 }
 
 .form__input:last-of-type {
-  margin-bottom: 91px;
+
 }
 
 .form__submit-button {
@@ -84,7 +84,7 @@
   }
 
   .form__input:last-of-type {
-    margin-bottom: 91px;
+
   }
   .register__question {
     margin-bottom: 232px;
@@ -109,7 +109,7 @@
   }
 
   .form__input:last-of-type {
-    margin-bottom: 179px;
+
   }
 
   .form__submit-button {

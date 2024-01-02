@@ -18,14 +18,13 @@ export default function MoviesCardList(props) {
     if (isSavedLocation) {
       setShownMovies(props.movies.length);
     }
-    if (displayWidth > 1180) {
-      setShownMovies(16);
-    } else if (displayWidth > 1023) {
+    if (displayWidth > 1279) {
       setShownMovies(12);
-    } else if (displayWidth > 800) {
+    } else if (displayWidth > 767){
       setShownMovies(8);
-    } else if (displayWidth < 800) {
-      setShownMovies(5);
+    }
+    else{
+        setShownMovies(5);
     }
   }
 
@@ -41,11 +40,9 @@ export default function MoviesCardList(props) {
 
   function showMore() {
     const display = window.innerWidth;
-    if (display > 1180) {
-      setShownMovies(shownMovies + 4);
-    } else if (display > 1023) {
+    if (display > 1279) {
       setShownMovies(shownMovies + 3);
-    } else if (display < 1023) {
+    } else {
       setShownMovies(shownMovies + 2);
     }
   }

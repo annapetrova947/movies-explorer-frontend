@@ -7,6 +7,8 @@
 }
 
 .movies-card__image {
+  width: 360px;
+  height: 201px;
   border-radius: 5px;
 }
 
@@ -22,6 +24,7 @@
 .movies-card__button_saved {
   width: 21px;
   background-image: url("./../../images/saved-botton-min.svg");
+  cursor: pointer;
 }
 
 .movies-card__button_should-deleted {
@@ -60,6 +63,8 @@
   font-weight: 500;
   line-height: 16px;
   margin: 14px 0 0 14px;
+  text-decoration: none;
+  color: black;
 }
 
 .movies-card__time {
@@ -76,6 +81,7 @@
   align-items: center;
   border-radius: 3px;
   margin-top: 14px;
+  text-decoration: none;
 }
 
 @media (max-width: 1279px) {

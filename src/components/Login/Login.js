@@ -2,14 +2,22 @@ import React from "react";
 import "./Login.css";
 import { Link, NavLink } from "react-router-dom";
 
-export default function Login() {
+export default function Login(props) {
+  const refInputEmail = React.useRef();
+  const refInputPassword = React.useRef();
+  function login(evt) {
+    evt.preventDefault();
+    props.onLogin(refInputEmail.current.value, refInputPassword.current.value);
+  }
+
   return (
     <div className="login">
       <Link to="/" className="login__logo"></Link>
       <p className="login__gladtosee">Рады видеть!</p>
-      <form className="form">
+      <form className="form" onSubmit={login}>
         <p className="form__fieldtitle">E-mail</p>
         <input
+          ref={refInputEmail}
           id="email"
           type="email"
           name="email"
@@ -20,6 +28,7 @@ export default function Login() {
         />
         <p className="form__fieldtitle">Пароль</p>
         <input
+          ref={refInputPassword}
           id="password"
           type="password"
           name="password"

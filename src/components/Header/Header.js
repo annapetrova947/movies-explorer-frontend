@@ -7,7 +7,7 @@ import "./Header.css";
 import Navigation from "./../Navigation/Navigation.js";
 import { Link, NavLink } from "react-router-dom";
 
-export default function Header() {
+export default function Header(props) {
   const location = useLocation();
   let ifLocationPathIsMain = location.pathname === "/";
   let classNameHeader = `header ${ifLocationPathIsMain && "header_color-pink"}`;
@@ -19,43 +19,53 @@ export default function Header() {
     <header className={classNameHeader}>
       <div className="header__container">
         <NavLink to="/" className="header__logo" />
-
-        <div className="header__navigation">
-          <NavLink
-            to="/movies"
-            className={({ isActive }) =>
-              isActive
-                ? "header__movies header__movies_active"
-                : "header__movies"
-            }
-          >
-            Фильмы
-          </NavLink>
-          <NavLink
-            to="/saved-movies"
-            className={({ isActive }) =>
-              isActive
-                ? "header__movies header__movies_active"
-                : "header__movies"
-            }
-          >
-            Сохранённые фильмы
-          </NavLink>
-          <Link to="/profile" className="header__account-link">
-            <p className="header__account">Аккаунт</p>
-
-            <div className={classNameProfile}>
-              <img
-                src={ifLocationPathIsMain ? profileLogoPink : profileLogo}
-                alt="Профиль"
-                className="header__profile-logo"
-              />
-            </div>
-          </Link>
-          <div className="header__menu">
-            <Navigation />
+        {props.loggedIn === false ? (
+          <div className="header__navigation">
+            <NavLink to="/sign-up" className="header__sign-up">
+              Регистрация
+            </NavLink>
+            <NavLink to="/sign-in" className="header__sign-in">
+              Войти
+            </NavLink>
           </div>
-        </div>
+        ) : (
+          <div className="header__navigation">
+            <NavLink
+              to="/movies"
+              className={({ isActive }) =>
+                isActive
+                  ? "header__movies header__movies_active"
+                  : "header__movies"
+              }
+            >
+              Фильмы
+            </NavLink>
+            <NavLink
+              to="/saved-movies"
+              className={({ isActive }) =>
+                isActive
+                  ? "header__movies header__movies_active"
+                  : "header__movies"
+              }
+            >
+              Сохранённые фильмы
+            </NavLink>
+            <Link to="/profile" className="header__account-link">
+              <p className="header__account">Аккаунт</p>
+
+              <div className={classNameProfile}>
+                <img
+                  src={ifLocationPathIsMain ? profileLogoPink : profileLogo}
+                  alt="Профиль"
+                  className="header__profile-logo"
+                />
+              </div>
+            </Link>
+            <div className="header__menu">
+              <Navigation />
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );

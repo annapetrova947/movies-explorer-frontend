@@ -20,27 +20,31 @@ export default function SavedMovies() {
         setSavedMovies(mov);
         setSearchSavedMovies(mov);
       })
-      .catch((err)=>{setTextError('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз')})
-      .finally(()=>setIsLoading(false));
+      .catch((err) => {
+        setTextError(
+          "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз",
+        );
+      })
+      .finally(() => setIsLoading(false));
   }, []);
 
   function deleteMovieOnSavedPage(movie) {
-    console.log('filter');
-    setSearchSavedMovies(searchSavedMovies.filter((mov) => mov._id !== movie._id));
+    setSearchSavedMovies(
+      searchSavedMovies.filter((mov) => mov._id !== movie._id),
+    );
   }
 
   function handleFindFilms(film, isShortFilm) {
-    if (film === '') {
-            setTextError('Нужно ввести ключевое слово');
-            setSearchSavedMovies([])
-    }
-    else if (savedMovies) {
-        setTextError('')
+    if (film === "") {
+      setTextError("Нужно ввести ключевое слово");
+      setSearchSavedMovies([]);
+    } else if (savedMovies) {
+      setTextError("");
       const sortedMovies = sortFilmsByName(savedMovies, film);
-      if (sortedMovies.length === 0) setTextError('Ничего не найдено');
+      if (sortedMovies.length === 0) setTextError("Ничего не найдено");
       if (isShortFilm === true) {
         const sortedShortMovies = sortFilmsByDuration(sortedMovies);
-        if (sortedShortMovies.length === 0) setTextError('Ничего не найдено');
+        if (sortedShortMovies.length === 0) setTextError("Ничего не найдено");
         setSearchSavedMovies(sortedShortMovies);
       } else {
         setSearchSavedMovies(sortedMovies);
@@ -52,7 +56,7 @@ export default function SavedMovies() {
     <>
       <Header />
       <main>
-        <SearchForm handleFindFilms={handleFindFilms} textError={textError}/>
+        <SearchForm handleFindFilms={handleFindFilms} textError={textError} />
         <MoviesCardList
           movies={searchSavedMovies}
           deleteMovieOnSavedPage={deleteMovieOnSavedPage}

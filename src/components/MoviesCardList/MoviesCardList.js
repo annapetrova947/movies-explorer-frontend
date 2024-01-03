@@ -9,28 +9,22 @@ export default function MoviesCardList(props) {
   let isSavedLocation = location.pathname === "/saved-movies";
   const [shownMovies, setShownMovies] = React.useState(0);
 
-  React.useEffect(()=>{
-    console.log(props.isLoading)
-  }, [])
-
   function shownMoviesCount() {
     const displayWidth = window.innerWidth;
     if (isSavedLocation) {
       setShownMovies(props.movies.length);
-    }
-    if (displayWidth > 1279) {
+    } else if (displayWidth > 1279) {
       setShownMovies(12);
-    } else if (displayWidth > 767){
+    } else if (displayWidth > 767) {
       setShownMovies(8);
-    }
-    else{
-        setShownMovies(5);
+    } else {
+      setShownMovies(5);
     }
   }
 
   React.useEffect(() => {
     shownMoviesCount();
-  }, []);
+  }, [props.movies]);
 
   React.useEffect(() => {
     setTimeout(() => {

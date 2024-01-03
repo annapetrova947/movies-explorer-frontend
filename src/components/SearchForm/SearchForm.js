@@ -17,6 +17,7 @@ export default function SearchForm(props) {
       setQuery(localStorage.getItem("searchedMovies"));
       if (localStorage.getItem("moviesShorts") === "true") {
         setIsShortsSet(true);
+        setIsShorts(true);
       }
     }
   }, [location]);
@@ -33,9 +34,14 @@ export default function SearchForm(props) {
     props.handleFindFilms(query, !isShorts);
   }
 
+  function submitFrom(e) {
+    e.preventDefault();
+    props.handleFindFilms(query, isShorts);
+  }
+
   return (
     <div className="search">
-      <form className="search__form">
+      <form className="search__form" onSubmit={submitFrom}>
         <img alt="Логотип поиска" src={findIcon} className="search__logo" />
         <input
           placeholder="Фильм"
@@ -60,7 +66,9 @@ export default function SearchForm(props) {
         handleChangeShorts={handleChangeShorts}
         isShortsSet={isShortsSet}
       />
-      {props.textError && <span className='search__error'>{props.textError}</span>}
+      {props.textError && (
+        <span className="search__error">{props.textError}</span>
+      )}
     </div>
   );
 }

@@ -63,7 +63,9 @@ function App() {
         setLoggedIn(true);
         navigate("/movies", { replace: true });
       })
-      .catch((err) => {console.log(err)});
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   function handleLogin(email, password) {
@@ -90,15 +92,7 @@ function App() {
               element={<Register onRegister={handleRegister} />}
             />
             <Route path="/sign-in" element={<Login onLogin={handleLogin} />} />
-            <Route
-              exact
-              path="/"
-              element={
-                <ProtectedRoute isAllowed={loggedIn}>
-                  <Main />
-                </ProtectedRoute>
-              }
-            />
+            <Route exact path="/" element={<Main loggedIn={loggedIn} />} />
             <Route
               exact
               path="/movies"

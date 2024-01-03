@@ -1,20 +1,21 @@
 import React from "react";
 import "./Register.css";
 import { Link, NavLink } from "react-router-dom";
-import useForm from '../../hooks/useForm';
+import useForm from "../../hooks/useForm";
 
 export default function Register(props) {
-    const { enteredValues, errors, handleChange, isFormValid } = useForm();
+  const { enteredValues, errors, handleChange, isFormValid } = useForm();
 
-      const EMAIL_REGEX =
-        "^[-a-z0-9!#$%&'*+/=?^_`{|}~]+(.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*@([a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?.)*(aero|arpa|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|[a-z][a-z])$";
-
-      let buttonClassName = `form__submit-button ${!isFormValid && "form__submit-button_disabled"}`
+  let buttonClassName = `form__submit-button ${
+    !isFormValid && "form__submit-button_disabled"
+  }`;
 
   function register(event) {
     event.preventDefault();
     props.onRegister(
-      enteredValues.name, enteredValues.email, enteredValues.password
+      enteredValues.name,
+      enteredValues.email,
+      enteredValues.password,
     );
   }
   return (
@@ -24,7 +25,7 @@ export default function Register(props) {
       <form className="form" onSubmit={register} id="form">
         <p className="form__fieldtitle">Имя</p>
         <input
-          value={enteredValues.name || ''}
+          value={enteredValues.name || ""}
           id="name"
           type="text"
           name="name"
@@ -37,19 +38,18 @@ export default function Register(props) {
         <span className="form__input-error">{errors.name}</span>
         <p className="form__fieldtitle">E-mail</p>
         <input
-          value={enteredValues.email || ''}
+          value={enteredValues.email || ""}
           id="email"
           type="email"
           name="email"
           className="form__input"
           required
-          pattern={EMAIL_REGEX}
           onChange={handleChange}
         />
         <span className="form__input-error">{errors.email}</span>
         <p className="form__fieldtitle">Пароль</p>
         <input
-          value={enteredValues.password || ''}
+          value={enteredValues.password || ""}
           id="password"
           type="password"
           name="password"

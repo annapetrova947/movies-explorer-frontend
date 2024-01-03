@@ -1,4 +1,5 @@
 import React, { useCallback } from "react";
+import isEmail from "validator/es/lib/isEmail";
 
 const useForm = () => {
   const [enteredValues, setEnteredValues] = React.useState({});
@@ -6,8 +7,17 @@ const useForm = () => {
   const [isFormValid, setIsFormValid] = React.useState(false);
 
   const handleChange = (event) => {
+    const input = event.target;
     const name = event.target.name;
     const value = event.target.value;
+
+    if (name === "email") {
+      if (!isEmail(value)) {
+        input.setCustomValidity("Некорректый адрес почты.");
+      } else {
+        input.setCustomValidity("");
+      }
+    }
 
     setEnteredValues({
       ...enteredValues,
@@ -18,7 +28,7 @@ const useForm = () => {
       ...errors,
       [name]: event.target.validationMessage,
     });
-    setIsFormValid(event.target.closest('#form').checkValidity());
+    setIsFormValid(event.target.closest("#form").checkValidity());
   };
 
   const resetForm = useCallback(

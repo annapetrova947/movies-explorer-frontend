@@ -11,6 +11,7 @@ export default function FilterCheckbox(props) {
   }, [props.isShortsSet]);
 
   const changeCheckbox = () => {
+    console.log(isChecked);
     setIsChecked(!isChecked);
     props.handleChangeShorts();
   };

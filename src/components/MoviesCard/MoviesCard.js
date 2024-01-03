@@ -12,10 +12,12 @@ export default function MoviesCard(props) {
   const [isMovieSaved, setIsMovieSaved] = React.useState(false);
 
   React.useEffect(() => {
-    api.getSavedFilms().then((mov) => {
-      setListSavedMovies(mov);
-    })
-    .catch((err)=> console.log(err));
+    api
+      .getSavedFilms()
+      .then((mov) => {
+        setListSavedMovies(mov);
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   React.useEffect(() => {
@@ -34,24 +36,29 @@ export default function MoviesCard(props) {
     }
   }, [listSavedMovies]);
 
-
   function handleSaveMovie(movie) {
     if (isSavedPage) {
-      api.deleteSavedFilm(cardID).then((res) => {
-        props.deleteMovieOnSavedPage(res);
-      })
-      .catch((err)=> console.log(err));;
+      api
+        .deleteSavedFilm(cardID)
+        .then((res) => {
+          props.deleteMovieOnSavedPage(res);
+        })
+        .catch((err) => console.log(err));
     } else if (isMovieSaved) {
-        console.log(cardID)
-      api.deleteSavedFilm(cardID).then((res) => {
-        setIsMovieSaved(false);
-      })
-      .catch((err)=> console.log(err));;
+      api
+        .deleteSavedFilm(cardID)
+        .then((res) => {
+          setIsMovieSaved(false);
+        })
+        .catch((err) => console.log(err));
     } else {
-      api.saveFilm(movie).then((res) => {
-        console.log(res.data._id);
-        setCardID(res.data._id)})
-        .catch((err)=> console.log(err));
+      api
+        .saveFilm(movie)
+        .then((res) => {
+          console.log(res.data._id);
+          setCardID(res.data._id);
+        })
+        .catch((err) => console.log(err));
 
       setIsMovieSaved(true);
     }

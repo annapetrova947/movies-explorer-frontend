@@ -27,10 +27,9 @@
   line-height: 12px;
   text-align: left;
   margin: 20px auto 10px;
-
 }
 
-.form__fieldtitle:first-of-type{
+.form__fieldtitle:first-of-type {
   margin-top: 0;
 }
 
@@ -47,7 +46,6 @@
 }
 
 .form__input-login:first-of-type {
-
 }
 
 .form__submit-button {
@@ -87,16 +85,16 @@
   text-decoration: none;
 }
 
-.form__submit-button_disabled{
+.form__submit-button_disabled {
   background-color: #aaaaaa;
   cursor: default;
 }
 
-.form__submit-button_disabled:hover{
+.form__submit-button_disabled:hover {
   opacity: 1;
 }
 
-.form__input-error{
+.form__input-error {
   font-size: 10px;
   padding-bottom: 5px;
 }
@@ -109,8 +107,6 @@
     margin-bottom: 232px;
   }
 }
-
-
 
 @media (max-width: 787px) {
   .login {

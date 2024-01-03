@@ -13,47 +13,49 @@ export default function Movies() {
   const [isLoading, setIsLoading] = React.useState(false);
 
   React.useEffect(() => {
-    setIsLoading(true);
-    getMovies()
-      .then((mov) => {
-        setMovies(mov);
-      })
-      .catch((err)=>{setTextError('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз')})
-      .finally(() => setIsLoading(false));
-  }, []);
-
-  React.useEffect(() => {
     if (
       localStorage.getItem("searchedMovies") &&
-      localStorage.getItem("moviesShorts")
+      localStorage.getItem("moviesShorts") &&
+      localStorage.getItem("searchedMoviesList")
     ) {
-      handleFindFilms(
-        localStorage.getItem("searchedMovies"),
-        localStorage.getItem("moviesShorts"),
-      );
+      setSearchMovies(JSON.parse(localStorage.getItem("searchedMoviesList")));
     }
-  }, [movies]);
-    const [textError, setTextError] = React.useState();
+  }, []);
+  const [textError, setTextError] = React.useState();
+
+  function getFilms() {}
 
   function handleFindFilms(film, isShortFilm) {
-    if (film === '') {
-        setTextError('Нужно ввести ключевое слово');
-        setSearchMovies([])
-    }
-    else if (movies) {
-        setTextError('')
-      const sortedMovies = sortFilmsByName(movies, film);
-      console.log(sortedMovies);
-      if (sortedMovies.length === 0) setTextError('Ничего не найдено');
-      if (isShortFilm === "true" || isShortFilm === true) {
-        const sortedShortMovies = sortFilmsByDuration(sortedMovies);
-        if (sortedShortMovies.length === 0) setTextError('Ничего не найдено');
-        setSearchMovies(sortedShortMovies);
-      } else {
-        setSearchMovies(sortedMovies);
-      }
-      localStorage.setItem("searchedMovies", film);
-      localStorage.setItem("moviesShorts", isShortFilm);
+    if (film === "") {
+      setTextError("Нужно ввести ключевое слово");
+      setSearchMovies([]);
+    } else {
+      setIsLoading(true);
+      getMovies()
+        .then((mov) => {
+          setTextError("");
+          setMovies(mov);
+          const sortedMovies = sortFilmsByName(mov, film);
+          if (sortedMovies.length === 0) setTextError("Ничего не найдено");
+          if (isShortFilm === "true" || isShortFilm === true) {
+            const sortedShortMovies = sortFilmsByDuration(sortedMovies);
+            if (sortedShortMovies.length === 0)
+              setTextError("Ничего не найдено");
+            setSearchMovies(sortedShortMovies);
+            localStorage.setItem("searchedMoviesList", JSON.stringify(sortedShortMovies));
+          } else {
+            setSearchMovies(sortedMovies);
+            localStorage.setItem("searchedMoviesList", JSON.stringify(sortedMovies));
+          }
+          localStorage.setItem("searchedMovies", film);
+          localStorage.setItem("moviesShorts", isShortFilm);
+        })
+        .catch((err) => {
+          setTextError(
+            "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз",
+          );
+        })
+        .finally(() => setIsLoading(false));
     }
   }
 
@@ -61,7 +63,7 @@ export default function Movies() {
     <>
       <Header />
       <main>
-        <SearchForm handleFindFilms={handleFindFilms} textError={textError}/>
+        <SearchForm handleFindFilms={handleFindFilms} textError={textError} />
         <MoviesCardList movies={searchMovies} isLoading={isLoading} />
       </main>
       <Footer />

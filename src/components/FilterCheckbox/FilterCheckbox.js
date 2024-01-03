@@ -1,11 +1,19 @@
 import React from "react";
 import "./FilterCheckbox.css";
 
-export default function FilterCheckbox() {
+export default function FilterCheckbox(props) {
   const [isChecked, setIsChecked] = React.useState(false);
 
+  React.useEffect(() => {
+    if (props.isShortsSet === true) {
+      setIsChecked(true);
+    }
+  }, [props.isShortsSet]);
+
   const changeCheckbox = () => {
+    console.log(isChecked);
     setIsChecked(!isChecked);
+    props.handleChangeShorts();
   };
 
   return (

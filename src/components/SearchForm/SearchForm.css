@@ -1,5 +1,6 @@
 .search {
   display: flex;
+  flex-wrap: wrap;
   max-width: 1140px;
   height: 72px;
   align-items: center;
@@ -45,6 +46,12 @@
 
 .search-form__button:hover {
   opacity: 0.8;
+}
+
+.search__error {
+  text-align: center;
+  font-size: 11px;
+  margin-left: 20px;
 }
 
 @media (max-width: 1279px) {
@@ -93,5 +100,10 @@
     width: 182px;
     margin: 19px;
     margin-right: 0;
+  }
+
+  .search__error {
+    width: 300px;
+    margin: 10px auto;
   }
 }

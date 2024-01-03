@@ -9,10 +9,10 @@ import Portfolio from "./../Portfolio/Portfolio.js";
 import Footer from "./../Footer/Footer.js";
 import "./Main.css";
 
-export default function Main() {
+export default function Main(props) {
   return (
     <div className="main">
-      <Header />
+      <Header loggedIn={props.loggedIn} />
       <main>
         <Promo />
         <NavTab />

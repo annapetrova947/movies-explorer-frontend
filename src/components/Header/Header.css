@@ -76,6 +76,41 @@
   background-color: #f3c1f8;
 }
 
+.header__sign-up {
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0;
+}
+
+.header__sign-in {
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  width: 76px;
+  text-align: center;
+  justify-self: center;
+  margin-left: 30px;
+  border-radius: 3px;
+}
+
+.header__sign-in:hover {
+  opacity: 0.7;
+}
+
+.header__sign-up:hover {
+  opacity: 0.8;
+}
+
 @media (max-width: 1279px) {
   .header__container {
     max-width: 708px;
